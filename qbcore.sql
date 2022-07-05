@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `crypto_transactions` (
   `citizenid` varchar(50) DEFAULT NULL,
   `title` varchar(50) DEFAULT NULL,
   `message` varchar(50) DEFAULT NULL,
-  `date` timestamp NULL DEFAULT current_timestamp(),
+  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP(),
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
