@@ -134,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `phone_invoices` (
 CREATE TABLE IF NOT EXISTS `phone_gallery` (
    `citizenid` VARCHAR(255) NOT NULL , 
    `image` VARCHAR(255) NOT NULL ,
-   `date` timestamp NULL DEFAULT current_timestamp()
+   `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP()
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE IF NOT EXISTS `player_mails` (
@@ -145,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `player_mails` (
   `message` text DEFAULT NULL,
   `read` tinyint(4) DEFAULT 0,
   `mailid` int(11) DEFAULT NULL,
-  `date` timestamp NULL DEFAULT current_timestamp(),
+  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP(),
   `button` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`)
@@ -167,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `phone_tweets` (
   `firstName` varchar(25) DEFAULT NULL,
   `lastName` varchar(25) DEFAULT NULL,
   `message` text DEFAULT NULL,
-  `date` datetime DEFAULT current_timestamp(),
+  `date` datetime DEFAULT CURRENT_TIMESTAMP(),
   `url` text DEFAULT NULL,
   `picture` varchar(512) DEFAULT './img/default.png',
   `tweetId` varchar(25) NOT NULL,
@@ -198,7 +198,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   `position` text NOT NULL,
   `metadata` text NOT NULL,
   `inventory` longtext DEFAULT NULL,
-  `last_updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `last_updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP(),
   PRIMARY KEY (`citizenid`),
   KEY `id` (`id`),
   KEY `last_updated` (`last_updated`),
