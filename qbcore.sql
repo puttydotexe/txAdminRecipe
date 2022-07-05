@@ -1,6 +1,3 @@
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
 CREATE TABLE IF NOT EXISTS `apartments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -39,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `crypto_transactions` (
   `citizenid` varchar(50) DEFAULT NULL,
   `title` varchar(50) DEFAULT NULL,
   `message` varchar(50) DEFAULT NULL,
-  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP(),
+  `date` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP(),
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
@@ -137,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `phone_invoices` (
 CREATE TABLE IF NOT EXISTS `phone_gallery` (
    `citizenid` VARCHAR(255) NOT NULL , 
    `image` VARCHAR(255) NOT NULL ,
-   `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP()
+   `date` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP()
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE IF NOT EXISTS `player_mails` (
@@ -148,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `player_mails` (
   `message` text DEFAULT NULL,
   `read` tinyint(4) DEFAULT 0,
   `mailid` int(11) DEFAULT NULL,
-  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP(),
+  `date` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP(),
   `button` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`)
@@ -201,7 +198,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   `position` text NOT NULL,
   `metadata` text NOT NULL,
   `inventory` longtext DEFAULT NULL,
-  `last_updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP(),
+  `last_updated` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP(),
   PRIMARY KEY (`citizenid`),
   KEY `id` (`id`),
   KEY `last_updated` (`last_updated`),
